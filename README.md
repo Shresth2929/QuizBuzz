@@ -31,19 +31,33 @@
 
 QuizBuzz/
 │
+
 ├── pom.xml
+
 └── src/
+
 └── main/
+
 ├── java/
+
 │ └── com/example/quiz/
+
 │ ├── QuizApplication.java
+
 │ ├── QuizController.java
+
 │ └── QuizSystem.java
+
 └── resources/
+
 ├── templates/
+
 │ ├── categories.html
+
 │ ├── question.html
+
 │ └── results.html
+
 └── application.properties
 
 ---
@@ -72,14 +86,19 @@ QuizBuzz/
 ---
 
 🙌 Author
+
 Shresth Veer Singh
+
 Java Developer | Learner | Tech Enthusiast
+
 📧 Email: shresthveer0408@gmail.com
+
 🔗 https://www.linkedin.com/in/shresth-veer-singh-598830291/
 
 ---
 
 📜 License
+
 This project is licensed under the MIT License.
 
 ---
