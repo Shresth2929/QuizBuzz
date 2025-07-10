@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizBuzz - Question</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-yellow-100 to-orange-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full relative">
+        <h2 class="text-2xl font-bold mb-4" th:text="${question.questionText}">Question</h2>
+        <div id="timer" class="absolute top-4 right-4 text-red-500 font-semibold">30</div>
+        <form th:action="@{/answer}" method="post">
+            <div th:each="option, iter : ${question.options}" class="mb-2">
+                <input type="radio" th:name="answer" th:value="${iter.index}" th:id="'option' + ${iter.index}" required>
+                <label th:for="'option' + ${iter.index}" th:text="${option}">Option</label>
+            </div>
+            <button type="submit" id="submitButton" class="mt-16 z-50 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Submit</button>
+        </form>
+        <form th:action="@{/back}" method="post" th:if="${canGoBack}">
+            <button type="submit" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back</button>
+        </form>
+    </div>
+    <script>
+        let timeLeft = 30;
+        const timerElement = document.getElementById('timer');
+        const submitButton = document.getElementById('submitButton');
+        console.log('Submit button loaded');
+        const timer = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                submitButton.form.submit();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

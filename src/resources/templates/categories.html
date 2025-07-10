@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizBuzz - Select Topic</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-yellow-100 to-orange-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full">
+        <h1 class="text-3xl font-bold text-center mb-6">QuizBuzz - Choose a Topic</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div th:each="topic : ${topics}" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white p-4 rounded-lg text-center">
+                <form th:action="@{/start}" method="post">
+                    <input type="hidden" name="topic" th:value="${topic}">
+                    <button type="submit" class="w-full text-lg font-semibold">
+                        <span th:text="${topic}">Topic</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
