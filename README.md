@@ -15,6 +15,17 @@
 
 ---
 
+🔍 Screenshots
+
+
+![App Screenshot](https://github.com/Shresth2929/QuizBuzz/blob/main/Screenshot%20(2605).png)
+
+![App Screenshot](https://github.com/Shresth2929/QuizBuzz/blob/main/Screenshot%20(2606).png)
+
+![App Screenshot](https://github.com/Shresth2929/QuizBuzz/blob/main/Screenshot%20(2608).png)
+
+---
+
 ## 🚀 Tech Stack
 
 | Layer        | Technology            |
@@ -110,15 +121,6 @@ User-selected answer index
 • if-else and loops to manage quiz navigation (nextQuestion, previousQuestion).
 
 • Conditional rendering in Thymeleaf based on quiz state (hasPreviousQuestion, quiz.getCurrentQuestion()).
-
----
-
-🔍 Screenshots
-
-
-
-
-
 
 ---
 
